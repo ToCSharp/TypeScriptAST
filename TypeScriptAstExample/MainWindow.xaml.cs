@@ -171,9 +171,7 @@ namespace TypeScriptAstExample
 
             var source = File.ReadAllText(fileName);
 
-            var ast = new TypeScriptAST();
-
-            ast.MakeAST(source, fileName);
+            var ast = new TypeScriptAST(source, fileName);
 
             var change = new ChangeAST();
 

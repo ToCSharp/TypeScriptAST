@@ -21,6 +21,14 @@ namespace Zu.TypeScript
         public string SourceStr { get; set; }
         public Node RootNode { get; set; }
 
+        public TypeScriptAST(string source = null, string fileName = "fileName.ts", bool setChildren = true)
+        {
+            if (source != null)
+            {
+                MakeAST(source, fileName, setChildren);
+            }
+        }
+
         public void MakeAST(string source, string fileName = "fileName.ts", bool setChildren = true)
         {
             SourceStr = source;
