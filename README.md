@@ -1,5 +1,6 @@
 # TypeScriptAST
-.NET port of Microsoft's TypeScript parser for simple AST manipulation
+.NET port of Microsoft's TypeScript parser for simple AST manipulation.
+If works with TypeScript, JavaScript and DefinitelyTyped(".d.ts") files.
 
 ## TS file modification Example
 
