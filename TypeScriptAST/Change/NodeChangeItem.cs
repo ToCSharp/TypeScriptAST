@@ -1,0 +1,27 @@
+﻿using Zu.TypeScript.TsTypes;
+
+namespace Zu.TypeScript.Change
+{
+    public class NodeChangeItem
+    {
+        public NodeChangeType ChangeType { get; set; }
+
+        public Node Node { get; set; }
+        //public int Pos { get; set; }
+
+        //public int End { get; set; }
+        public string NewValue { get; set; }
+
+        private string NewValueSmall => NewValue == null
+            ? ""
+            : NewValue.Length > 20
+                ? NewValue.Substring(0, 18) + $"..({NewValue.Length})"
+                : NewValue;
+
+        public override string ToString()
+        {
+            if (ChangeType == NodeChangeType.Delete) return $"{ChangeType} {Node}.";
+            return $"{ChangeType} {Node}. NewValue = \"{NewValueSmall}\"";
+        }
+    }
+}

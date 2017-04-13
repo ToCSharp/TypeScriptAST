@@ -1,0 +1,60 @@
+﻿<Window x:Class="TypeScriptAstExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TypeScriptAstExample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="600">
+    <Grid>
+        <TabControl>
+            <TabItem Header="AST">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="241*"/>
+                        <ColumnDefinition Width="270*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="41"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="lbNodes" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="lbNodes_SelectionChanged"/>
+                    <TextBox x:Name="tbNodeText" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,29"/>
+                    <ListBox x:Name="lbChanges" Grid.Column="1" Grid.Row="2" SelectionChanged="lbChanges_SelectionChanged"/>
+                    <Button Content="change" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,4" Grid.Row="1" VerticalAlignment="Bottom" Width="68" Click="Button_Click_4" Height="20"/>
+                    <Button Content="make new source" Grid.Column="1" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click_5" Height="20"/>
+                    <Button Content="make AST" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_7" Height="20"/>
+                    <Button Content="find" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="75" Click="Button_Click_16" Height="20"/>
+                    <TextBox x:Name="tbSearchStr" Height="23" Margin="90,7,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="sayHello"/>
+                    <Button Content="clear" Grid.Column="1" HorizontalAlignment="Left" Margin="221,10,0,0" VerticalAlignment="Top" Width="57" Click="Button_Click" Height="20"/>
+                    <Button Content="insert before" Grid.Column="1" HorizontalAlignment="Left" Margin="78,0,0,4" Grid.Row="1" VerticalAlignment="Bottom" Width="75" Click="Button_Click_2" Height="20"/>
+                    <Button Content="insert after" Grid.Column="1" HorizontalAlignment="Left" Margin="160,0,0,4" Grid.Row="1" VerticalAlignment="Bottom" Width="75" Click="Button_Click_3" Height="20"/>
+                    <Button Content="delete" Grid.Column="1" HorizontalAlignment="Left" Margin="243,0,0,4" Grid.Row="1" VerticalAlignment="Bottom" Width="57" Click="Button_Click_6" Height="20"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Source">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="44"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="tbSource" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Text="class RandomProgram  {&#xA;    // comment&#xA;    sayHello() {&#xA;        console.log(&quot;Hello, World!&quot;);&#xA;    }&#xA;}&#xA;let myProgram = new RandomProgram();&#xA;myProgram.sayHello();"/>
+                    <Button Content="open file" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+                    <TextBox x:Name="tbFileName" Height="23" Margin="184,10,10,0" TextWrapping="Wrap" Text="file1.ts" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbNewSource" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TreeString">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="tbTreeString" TextWrapping="Wrap" Text="TextBox" VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
