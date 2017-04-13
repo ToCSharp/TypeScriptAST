@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Win32;
@@ -12,13 +13,13 @@ namespace TypeScriptAstExample
 {
     public partial class MainWindow : Window
     {
+        private readonly ObservableCollection<NodeChangeItem> _nodeChangeItems =
+            new ObservableCollection<NodeChangeItem>();
+
         private TypeScriptAST _currentAst;
         private ChangeAST _currentChangeAst;
         private string _currentSource;
         private string _currentSourceFileName;
-
-        private readonly ObservableCollection<NodeChangeItem> _nodeChangeItems =
-            new ObservableCollection<NodeChangeItem>();
 
         public MainWindow()
         {
@@ -154,6 +155,44 @@ namespace TypeScriptAstExample
                 }
             if (ch.NewValue != null)
                 tbNodeText.Text = ch.NewValue;
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            var fileName = "parser.ts";
+            if (!File.Exists(fileName))
+            {
+                var openFileDialog = new OpenFileDialog();
+                if (openFileDialog.ShowDialog() == true)
+                    fileName = openFileDialog.FileName;
+                else
+                    return;
+            }
+
+            var source = File.ReadAllText(fileName);
+
+            var ast = new TypeScriptAST();
+
+            ast.MakeAST(source, fileName);
+
+            var change = new ChangeAST();
+
+            foreach (var module in ast.GetDescendants().OfType<ModuleDeclaration>())
+            {
+                var funcs = module.Body.Children.OfType<FunctionDeclaration>().ToList();
+                var enums = module.Body.Children.OfType<EnumDeclaration>();
+                var moduleInfoFunc = $@"
+    export function getModuleInfo() {{
+        return ""Module {module.IdentifierStr} contains {funcs.Count()} functions ({
+                        funcs.Count(v => v.IdentifierStr.StartsWith("parse"))
+                    } starts with parse), {enums.Count()} enums ..."";
+    }}
+";
+                change.InsertBefore(module.Body.Children.First(), moduleInfoFunc);
+            }
+            var newSource = change.GetChangedSource(ast.SourceStr);
+            tbExample2Res.Text = newSource;
+            File.WriteAllText("parser2.ts", newSource);
         }
     }
 }

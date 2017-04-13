@@ -8,7 +8,7 @@ namespace Zu.TypeScript.TsTypes
 {
     public class Node : TextRange, INode
     {
-        public List<Node> Children = new List<Node>();
+        public List<Node> Children { get; set; } = new List<Node>();
         public ITypeScriptAST Ast { get; set; }
 
         public string SourceStr
@@ -22,7 +22,6 @@ namespace Zu.TypeScript.TsTypes
             : Children.FirstOrDefault(v => v.Kind == SyntaxKind.Identifier)?.GetText().Trim();
 
         public int ParentId { get; set; }
-        public Node ParentNode { get; set; }
         public int Depth { get; set; }
         public int NodeStart { get; set; } = -1;
         public SyntaxKind Kind { get; set; }
@@ -59,7 +58,7 @@ namespace Zu.TypeScript.TsTypes
                 var n = (Node)node;
                 n.Ast = ast;
                 n.Depth = Depth + 1;
-                n.ParentNode = this;
+                n.Parent = this;
                 if (n.Pos != null) n.NodeStart = Scanner.SkipTriviaM(SourceStr, (int)n.Pos);
                 Children.Add(n);
                 n.MakeChildren(ast);
@@ -146,6 +145,8 @@ namespace Zu.TypeScript.TsTypes
 
         int Id { get; set; }
         INode Parent { get; set; }
+        List<Node> Children { get; set; }
+        int Depth { get; set; }
         Node Original { get; set; }
         bool StartsOnNewLine { get; set; }
         List<JsDoc> JsDoc { get; set; }

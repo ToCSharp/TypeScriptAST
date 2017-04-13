@@ -54,6 +54,16 @@
                     <TextBox x:Name="tbTreeString" TextWrapping="Wrap" Text="TextBox" VerticalScrollBarVisibility="Auto"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Example2">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="52"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Content="modify parser.ts file" HorizontalAlignment="Left" Margin="71,10,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click_8"/>
+                    <TextBox x:Name="tbExample2Res" Grid.Row="1" TextWrapping="Wrap"/>
+                </Grid>
+            </TabItem>
         </TabControl>
 
     </Grid>

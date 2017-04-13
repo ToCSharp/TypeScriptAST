@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TsTypes\Enums.cs" />
     <Compile Include="TsTypes\Node.cs" />
+    <Compile Include="TsTypes\NodeExtensions.cs" />
     <Compile Include="TsTypes\SyntaxKind.cs" />
     <Compile Include="TsTypes\TsTypes.cs" />
     <Compile Include="TypeScriptAST.cs" />
