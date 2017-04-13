@@ -1,6 +1,7 @@
 # TypeScriptAST
 .NET port of Microsoft's TypeScript parser for simple AST manipulation.
-If works with TypeScript, JavaScript and DefinitelyTyped(".d.ts") files.
+
+If works with TypeScript, JavaScript and DefinitelyTyped(".d.ts") files and gives the same tree as typescriptServices.js.
 
 ## TS file modification Example
 
