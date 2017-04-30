@@ -160,5 +160,11 @@ namespace Zu.TypeScript.TsTypes
         Type ContextualType { get; set; }
         TypeMapper ContextualMapper { get; set; }
         int TagInt { get; set; }
+
+        string GetText(string source = null);
+        string GetTextWithComments(string source = null);
+        string GetTreeString(bool withPos = true);
+
+        string ToString(bool withPos);
     }
 }

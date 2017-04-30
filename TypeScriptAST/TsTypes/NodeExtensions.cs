@@ -23,5 +23,20 @@ namespace Zu.TypeScript.TsTypes
                 current = current.Parent;
             }
         }
+        public static IEnumerable<Node> OfKind(this IEnumerable<Node> nodes, SyntaxKind kind)
+        {
+            foreach (var node in nodes)
+            {
+                if (node.Kind == kind) yield return node;
+            }
+        }
+
+        public static IEnumerable<INode> OfKind(this IEnumerable<INode> nodes, SyntaxKind kind)
+        {
+            foreach (var node in nodes)
+            {
+                if (node.Kind == kind) yield return node;
+            }
+        }
     }
 }
