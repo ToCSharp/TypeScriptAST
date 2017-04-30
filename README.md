@@ -24,6 +24,14 @@ By Node type
   var text = firstFunc?.GetText();
   var withComments = firstFunc?.GetTextWithComments();
 ```
+## Change Node
+```csharp
+  var funcNewCode = "function() {}";
+  var change = new ChangeAST();
+  change.ChangeNode(firstFunc, funcNewCode);
+  var newSource = change.GetChangedSource(ast.SourceStr);
+  File.WriteAllText(file, newSource);
+```
 ## File modification Example
 
 This example included in TypeScriptAstExample. It finds modules in file, collects some info, adds new function to module.
