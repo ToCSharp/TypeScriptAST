@@ -6,7 +6,7 @@ namespace Zu.TypeScript.Change
     {
         public NodeChangeType ChangeType { get; set; }
 
-        public Node Node { get; set; }
+        public INode Node { get; set; }
         //public int Pos { get; set; }
 
         //public int End { get; set; }

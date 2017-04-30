@@ -102,6 +102,9 @@ namespace Zu.TypeScript.TsTypes
             }
             return $"{Enum.GetName(typeof(SyntaxKind), Kind)}  {IdentifierStr}";
         }
+        public Node First => Children.FirstOrDefault();
+        public Node Last => Children.LastOrDefault();
+        public int Count => Children.Count;
 
         public IEnumerable<Node> OfKind(SyntaxKind kind) => GetDescendants(false).OfKind(kind);
 
@@ -168,5 +171,9 @@ namespace Zu.TypeScript.TsTypes
         string GetTreeString(bool withPos = true);
 
         string ToString(bool withPos);
+        Node First { get; }
+        Node Last { get; }
+        int Count { get; }
+
     }
 }

@@ -60,7 +60,7 @@ namespace Zu.TypeScript.Change
             return Change(baseSource, _nodeChangeItems);
         }
 
-        public void ChangeNode(Node node, string newValue)
+        public void ChangeNode(INode node, string newValue)
         {
             if (_nodeChangeItems.Any(v => v.Node == node &&
                                           (v.ChangeType == NodeChangeType.Change ||
@@ -80,7 +80,7 @@ namespace Zu.TypeScript.Change
             }
         }
 
-        public void InsertBefore(Node node, string newValue)
+        public void InsertBefore(INode node, string newValue)
         {
             if (node != null)
             {
@@ -97,7 +97,7 @@ namespace Zu.TypeScript.Change
             }
         }
 
-        public void InsertAfter(Node node, string newValue)
+        public void InsertAfter(INode node, string newValue)
         {
             if (node != null)
             {
@@ -114,7 +114,7 @@ namespace Zu.TypeScript.Change
             }
         }
 
-        public void Delete(Node node)
+        public void Delete(INode node)
         {
             if (node != null)
             {
