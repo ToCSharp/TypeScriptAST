@@ -45,6 +45,7 @@ namespace Zu.TypeScript
         }
 
         private bool childrenMade = false;
+        public IEnumerable<Node> OfKind(SyntaxKind kind) => RootNode?.OfKind(kind);
         public IEnumerable<Node> GetDescendants()
         {
             if (!childrenMade && RootNode != null)

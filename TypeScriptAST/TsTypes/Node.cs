@@ -103,6 +103,8 @@ namespace Zu.TypeScript.TsTypes
             return $"{Enum.GetName(typeof(SyntaxKind), Kind)}  {IdentifierStr}";
         }
 
+        public IEnumerable<Node> OfKind(SyntaxKind kind) => GetDescendants(false).OfKind(kind);
+
         public IEnumerable<Node> GetDescendants(bool includeSelf = true)
         {
             if (includeSelf) yield return this;
