@@ -15,8 +15,8 @@ By SyntaxKind
 ```
 By Node type
 ```csharp
-  functions = ast.GetDescendants().OfType<FunctionExpression>();
-  vars = functions.FirstOrDefault()?.GetDescendants().OfType<VariableDeclaration>();
+  var functions = ast.GetDescendants().OfType<FunctionExpression>();
+  var vars = functions.FirstOrDefault()?.GetDescendants().OfType<VariableDeclaration>();
 ```
 ## File modification Example
 
