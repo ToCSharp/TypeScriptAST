@@ -3,7 +3,22 @@
 
 If works with TypeScript, JavaScript and DefinitelyTyped(".d.ts") files and gives the same tree as typescriptServices.js.
 
-## TS file modification Example
+## Create AST
+```csharp
+var ast = new TypeScriptAST(File.ReadAllText(file), file);
+```
+## Find Node
+By SyntaxKind
+```csharp
+  var functions = ast.OfKind(SyntaxKind.FunctionExpression);
+  var vars = functions.FirstOrDefault()?.OfKind(SyntaxKind.VariableDeclaration);
+```
+By Node type
+```csharp
+  functions = ast.GetDescendants().OfType<FunctionExpression>();
+  vars = functions.FirstOrDefault()?.GetDescendants().OfType<VariableDeclaration>();
+```
+## File modification Example
 
 This example included in TypeScriptAstExample. It finds modules in file, collects some info, adds new function to module.
 
