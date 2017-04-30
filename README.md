@@ -18,6 +18,12 @@ By Node type
   var functions = ast.GetDescendants().OfType<FunctionExpression>();
   var vars = functions.FirstOrDefault()?.GetDescendants().OfType<VariableDeclaration>();
 ```
+## GetText
+```csharp
+  var firstFunc = ast.OfKind(SyntaxKind.FunctionExpression).FirstOrDefault();
+  var text = firstFunc?.GetText();
+  var withComments = firstFunc?.GetTextWithComments();
+```
 ## File modification Example
 
 This example included in TypeScriptAstExample. It finds modules in file, collects some info, adds new function to module.
