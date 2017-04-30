@@ -1,0 +1,2 @@
+TypeScriptAST is based on some portions of TypeScript project hosted on https://github.com/Microsoft/TypeScript distributed with Apache 2.0 license.
+It does not represent a direct port of TypeScript into C#, it only uses some parts related to TypeScrip parser.
