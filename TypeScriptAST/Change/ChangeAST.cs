@@ -84,8 +84,8 @@ namespace Zu.TypeScript.Change
         {
             if (node != null)
             {
-                if (_nodeChangeItems.Any(v => v.Node.Pos < node.Pos && v.Node.End > node.Pos))
-                    throw new Exception("ChangeItems already have node that contains this node. Delete first");
+                //if (_nodeChangeItems.Any(v => v.Node.Pos < node.Pos && v.Node.End > node.Pos))
+                //    throw new Exception("ChangeItems already have node that contains this node. Delete first");
 
                 var nodeCh = new NodeChangeItem
                 {
@@ -101,8 +101,8 @@ namespace Zu.TypeScript.Change
         {
             if (node != null)
             {
-                if (_nodeChangeItems.Any(v => v.Node.Pos < node.Pos && v.Node.End > node.Pos))
-                    throw new Exception("ChangeItems already have node that contains this node. Delete first");
+                //if (_nodeChangeItems.Any(v => v.Node.Pos < node.Pos && v.Node.End > node.Pos))
+                //    throw new Exception("ChangeItems already have node that contains this node. Delete first");
 
                 var nodeCh = new NodeChangeItem
                 {
