@@ -6178,7 +6178,7 @@ namespace Zu.TypeScript.TsParser
 
         public IAccessorDeclaration ParseAccessorDeclaration(SyntaxKind kind, int fullStart, NodeArray<Decorator> decorators, NodeArray<Modifier> modifiers)
         {
-            IAccessorDeclaration node = kind == SyntaxKind.GetAccessor ? new GetAccessorDeclaration() { Kind = kind, Pos = fullStart } : kind == SyntaxKind.GetAccessor ? new GetAccessorDeclaration() { Kind = kind, Pos = fullStart } : throw new NotSupportedException("parseAccessorDeclaration");
+            IAccessorDeclaration node = kind == SyntaxKind.GetAccessor ? (IAccessorDeclaration)new GetAccessorDeclaration() { Kind = kind, Pos = fullStart } : kind == SyntaxKind.SetAccessor ? new SetAccessorDeclaration() { Kind = kind, Pos = fullStart } : throw new NotSupportedException("parseAccessorDeclaration");
 
             node.Decorators = decorators;
 
