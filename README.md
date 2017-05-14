@@ -3,6 +3,14 @@
 
 It works with TypeScript, JavaScript and DefinitelyTyped(".d.ts") files and gives the same tree as typescriptServices.js.
 
+## Install TypeScriptAST via NuGet
+
+If you want to include TypeScriptAST in your project, you can [install it directly from NuGet](https://www.nuget.org/packages/TypeScriptAST/)
+
+```
+PM> Install-Package TypeScriptAST
+```
+
 ## Create AST
 ```csharp
 var ast = new TypeScriptAST(File.ReadAllText(file), file);
