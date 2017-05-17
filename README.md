@@ -1,4 +1,6 @@
 # TypeScriptAST
+
+[![Join the chat at https://gitter.im/TypeScriptAST/Lobby](https://badges.gitter.im/TypeScriptAST/Lobby.svg)](https://gitter.im/TypeScriptAST/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 .NET port of Microsoft's TypeScript parser for simple AST manipulation.
 
 It works with TypeScript, JavaScript and DefinitelyTyped(".d.ts") files and gives the same tree as typescriptServices.js.
