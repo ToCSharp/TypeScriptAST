@@ -43,15 +43,15 @@
                         <RowDefinition Height="44"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBox x:Name="tbSource" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Text="class RandomProgram  {&#xA;    // comment&#xA;    sayHello() {&#xA;        console.log(&quot;Hello, World!&quot;);&#xA;    }&#xA;}&#xA;let myProgram = new RandomProgram();&#xA;myProgram.sayHello();"/>
+                    <TextBox x:Name="tbSource" AcceptsReturn="True" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Text="class RandomProgram  {&#xA;    // comment&#xA;    sayHello() {&#xA;        console.log(&quot;Hello, World!&quot;);&#xA;    }&#xA;}&#xA;let myProgram = new RandomProgram();&#xA;myProgram.sayHello();"/>
                     <Button Content="open file" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
                     <TextBox x:Name="tbFileName" Height="23" Margin="184,10,10,0" TextWrapping="Wrap" Text="file1.ts" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="tbNewSource" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="tbNewSource" AcceptsReturn="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
                 </Grid>
             </TabItem>
             <TabItem Header="TreeString">
                 <Grid Background="#FFE5E5E5">
-                    <TextBox x:Name="tbTreeString" TextWrapping="Wrap" Text="TextBox" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="tbTreeString" TextWrapping="Wrap" Text="TextBox" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Example2">
@@ -61,7 +61,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Button Content="modify parser.ts file" HorizontalAlignment="Left" Margin="71,10,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click_8"/>
-                    <TextBox x:Name="tbExample2Res" Grid.Row="1" TextWrapping="Wrap"/>
+                    <TextBox x:Name="tbExample2Res" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True"/>
                 </Grid>
             </TabItem>
         </TabControl>
