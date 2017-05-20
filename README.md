@@ -1,7 +1,19 @@
 # TypeScriptAST
+
 .NET port of Microsoft's TypeScript parser for simple AST manipulation.
 
 It works with TypeScript, JavaScript and DefinitelyTyped(".d.ts") files and gives the same tree as typescriptServices.js.
+
+[![Join the chat at https://gitter.im/TypeScriptAST/Lobby](https://badges.gitter.im/TypeScriptAST/Lobby.svg)](https://gitter.im/TypeScriptAST/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+## Install TypeScriptAST via NuGet
+
+If you want to include TypeScriptAST in your project, you can [install it directly from NuGet](https://www.nuget.org/packages/TypeScriptAST/)
+
+```
+PM> Install-Package TypeScriptAST
+```
 
 ## Create AST
 ```csharp
