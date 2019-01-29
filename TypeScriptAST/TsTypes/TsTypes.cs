@@ -2277,7 +2277,7 @@ namespace Zu.TypeScript.TsTypes
         public IExpression ModuleSpecifier { get; set; }
     }
 
-    public class NamedImports : Node, INamedImportsOrExports
+    public class NamedImports : Node, INamedImportsOrExports, INamedImportBindings
     {
         public NamedImports()
         {
