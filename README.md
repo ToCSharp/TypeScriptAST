@@ -1,3 +1,9 @@
+This is old project for TypeScript, which is developing so fast. I think now is not the best option for parsing TypeScript. Now it's not easy to upgrade to the current TypeScript. For JavaScript I think it still good.
+It's time to rewrite TypeScriptAST. Microsoft showed us how to do it in System.Text.Json for .NET Core 3.0:
+"Provide high-performance JSON APIs. We needed a new set of JSON APIs that are highly tuned for performance by using Span"
+https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/
+https://github.com/dotnet/runtime/blob/master/src/libraries/System.Text.Json/src/System/Text/Json/Reader/Utf8JsonReader.cs
+
 # TypeScriptAST
 
 .NET port of Microsoft's TypeScript parser for simple AST manipulation.
