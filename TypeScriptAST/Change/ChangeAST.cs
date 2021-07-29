@@ -17,7 +17,7 @@ namespace Zu.TypeScript.Change
 
         public static string Change(string source, IEnumerable<NodeChangeItem> changeItems)
         {
-            var changes = changeItems.OrderBy(v => v.Node.Pos).ThenBy(v2 => v2.ChangeType);
+            var changes = changeItems.OrderBy(v => v.Node.End).ThenBy(v2 => v2.ChangeType);
             var sb = new StringBuilder();
             var pos = 0;
             foreach (var ch in changes)
